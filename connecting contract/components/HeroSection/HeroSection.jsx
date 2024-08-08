@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 
 //internal import
@@ -8,12 +8,16 @@ import Style from "./HeroSection.module.css";
 import { Button } from "../componentsindex";
 import images from "../../img";
 
+//smart contract import
+import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+
 const HeroSection = () => {
+  const { titleData } = useContext(NFTMarketplaceContext);
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
         <div className={Style.heroSection_box_left}>
-          <h1>Discover, Collect, and Thrive with our NFT Marketplace.</h1>
+          <h1>{titleData}</h1>
           <p>
             Discover unique digital assets, collect the ones that inspire you,
             and thrive as you build your portfolio and connect with a vibrant
