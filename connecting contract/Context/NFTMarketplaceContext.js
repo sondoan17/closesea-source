@@ -6,8 +6,12 @@ import Router from "next/router";
 //internal import
 import { NFTMarketplaceAddress, NFTMarketplaceABI } from "./constants";
 
-const NFTMarketplaceContext = () => {
-  return <div>NFTMarketplaceContext</div>;
+export const NFTMarketplaceContext = React.createContext();
+export const NFTMarketplaceProvider = ({ children }) => {
+    const titleData ='Discover, Collect, and Thrive with our NFT Marketplace.'
+  return (
+    <NFTMarketplaceContext.Provider value={{titleData}}>
+      {children}
+    </NFTMarketplaceContext.Provider>
+  );
 };
-
-export default NFTMarketplaceContext;

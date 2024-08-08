@@ -4,6 +4,7 @@ export const metadata = {
 };
 import "./styles/globals.css";
 import { NavBar, Footer } from "../components/componentsindex";
+import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
 
 const RootLayout = ({ children }) => {
   return (
@@ -12,9 +13,11 @@ const RootLayout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <NavBar />
-        {children}
-        <Footer />
+        <NFTMarketplaceProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </NFTMarketplaceProvider>
       </body>
     </html>
   );
