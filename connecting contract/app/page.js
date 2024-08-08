@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useContext } from "react";
 import "./styles/globals.css";
 import Style from "./page.module.css";
 
@@ -18,38 +19,45 @@ import {
   Brand,
   Video,
 } from "../components/componentsindex";
+import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
-const HomePage = () => (
-  <div>
-    <div className={Style.homePage}>
-      <HeroSection />
-      <Service />
-      <BigNFTSlider />
-      <Title
-        heading="Audio Collection"
-        paragraph="Discover the most outstanding NFTs in all topics of lifes"
-      />
-      <AudioLive />
-      <FollowerTab />
+const HomePage = () => {
+  const { checkContract } = useContext(NFTMarketplaceContext);
+  useEffect(() => {
+    checkContract();
+  }, []);
+  return (
+    <div>
+      <div className={Style.homePage}>
+        <HeroSection />
+        <Service />
+        <BigNFTSlider />
+        <Title
+          heading="Audio Collection"
+          paragraph="Discover the most outstanding NFTs in all topics of lifes"
+        />
+        <AudioLive />
+        <FollowerTab />
 
-      <Slider />
-      <Collection />
-      <Title
-        heading="Featured NFTs"
-        paragraph="Discover the most outstanding NFTs in all topics of lifes"
-      />
-      <Filter />
-      <NFTCard />
-      <Title
-        heading="Browse by category"
-        paragraph="Explore the NFTs in the most featured categories."
-      />
-      <Category />
-      <Subscribe />
-      <Brand />
-      <Video />
+        <Slider />
+        <Collection />
+        <Title
+          heading="Featured NFTs"
+          paragraph="Discover the most outstanding NFTs in all topics of lifes"
+        />
+        <Filter />
+        <NFTCard />
+        <Title
+          heading="Browse by category"
+          paragraph="Explore the NFTs in the most featured categories."
+        />
+        <Category />
+        <Subscribe />
+        <Brand />
+        <Video />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default HomePage;

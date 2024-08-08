@@ -9,9 +9,7 @@ import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
 const RootLayout = ({ children }) => {
   return (
     <html>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
+      <head>{/* <link rel="icon" href="/favicon.ico" /> */}</head>
       <body>
         <NFTMarketplaceProvider>
           <NavBar />

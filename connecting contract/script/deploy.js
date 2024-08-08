@@ -1,4 +1,5 @@
 const hre = require("hardhat");
+const { ethers, JsonRpcProvider } = require('ethers');
 
 async function main() {
   const NFTMarketplace = await hre.ethers.getContractFactory("NFTMarketplace");

@@ -10,17 +10,21 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.7.3",
+    "@walletconnect/web3-provider": "^1.8.0",
     "axios": "^0.27.2",
     "ether": "^0.0.9",
+    "ethers": "^5.7.2",
     "framer-motion": "^11.2.11",
     "ipfs-http-client": "^58.0.0",
     "next": "^14.2.5",
+    "node-fetch": "^3.3.2",
+    "pinata": "^0.1.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-dropzone": "^14.2.3",
     "react-icons": "^5.2.1",
     "react-iframe": "^1.8.5",
-    "web3modal": "^1.9.9"
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
