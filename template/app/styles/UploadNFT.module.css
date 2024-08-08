@@ -1,0 +1,64 @@
+.UploadNFT {
+  width: 100%;
+  margin-block: 8rem;
+}
+.UploadNFT_box {
+  width: 80%;
+  margin: 0 auto;
+}
+.UploadNFT_box_heading {
+  border-bottom: 1px solid var(--shadow-dark-color);
+}
+.UploadNFT_box_heading h1 {
+  font-size: 3rem;
+  line-height: 0.1;
+}
+
+.UploadNFT_box_heading p {
+  font-size: 1.4rem;
+  width: 70%;
+  line-height: 1.2;
+}
+.UploadNFT_box_title {
+  border-bottom: 1px solid var(--shadow-dark-color);
+  margin-top: 4rem;
+}
+.UploadNFT_box_title h2 {
+  font-size: 1.6rem;
+  line-height: 0;
+}
+.UploadNFT_box_title p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 320px) and (max-width: 475px) {
+  .UploadNFT_box {
+    width: 90%;
+  }
+  .UploadNFT_box_heading p {
+    width: 100%;
+  }
+  .UploadNFT_box_heading h1 {
+    font-size: 2rem;
+  }
+  .UploadNFT_box_title h2 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 476px) and (max-width: 768px) {
+  .UploadNFT_box {
+    width: 80%;
+  }
+  .UploadNFT_box_heading h1 {
+    font-size: 2.5rem;
+  }
+  .UploadNFT_box_title h2 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+  .UploadNFT_box_heading p {
+    width: 100%;
+  }
+}

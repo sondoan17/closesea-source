@@ -1,0 +1,82 @@
+.daysComponent {
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+.daysComponent:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.daysComponent_box_img_img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: block;
+  max-width: 100%;
+  min-height: 180px;
+  max-height: 180px;
+  padding-bottom: 0.5rem;
+  width: auto;
+  height: auto;
+}
+.daysComponent_box_profile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.daysComponent_box_img_1,
+.daysComponent_box_img_2,
+.daysComponent_box_img_3 {
+  display: block;
+  max-width: 100%;
+  min-height: 80px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+}
+.daysComponent_box_img_1 {
+  border-bottom-left-radius: 1rem;
+}
+.daysComponent_box_img_3 {
+  border-bottom-right-radius: 1rem;
+}
+.daysComponent_box_title {
+  padding: 1rem 2rem;
+  line-height: 0;
+}
+.daysComponent_box_title_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.daysComponent_box_title_info_profile_img {
+  border-radius: 50%;
+}
+.daysComponent_box_title_info_profile {
+  display: flex;
+  align-items: center;
+}
+
+.daysComponent_box_title_info_profile span {
+  font-weight: 600;
+  padding-inline: 0.5rem;
+}
+.daysComponent_box_title_info_price small {
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 3px solid var(--icons-color);
+  padding: 0.5rem;
+}
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .daysComponent_box_title {
+    padding: 1.5rem 1rem;
+  }
+}
+@media screen and (min-width: 731px) and (max-width: 1024px) {
+  .daysComponent_box_profile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .daysComponent_box_title h2 {
+    font-size: 1.2rem;
+  }
+}

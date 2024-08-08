@@ -1,0 +1,24 @@
+.banner_img {
+}
+.banner_img_img {
+  object-fit: cover;
+  max-height: 300px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .banner_img_mobile {
+    display: block;
+  }
+  .banner_img_mobile_img_img {
+    min-height: 600px;
+    object-fit: cover;
+  }
+  .banner_img {
+    display: none;
+  }
+}
+@media screen and (min-width: 426px) {
+  .banner_img_mobile {
+    display: none;
+  }
+}

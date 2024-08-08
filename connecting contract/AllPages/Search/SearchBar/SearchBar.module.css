@@ -1,0 +1,48 @@
+.SearchBar {
+  width: 100%;
+  margin: 0 auto;
+}
+.SearchBar_box {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: var(--main-bg-color);
+  color: var(--icons-color);
+  display: flex;
+  border-radius: 5rem;
+  align-items: center;
+  margin-top: 2.7rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+}
+
+.SearchBar_box_icon {
+  font-size: 3rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  color: var(--icons-color);
+}
+.SearchBar_box input {
+  width: 85%;
+  border: 0;
+  outline: 0;
+  padding-inline: 2rem;
+  background-color: var(--main-bg-color);
+  font-size: 1rem;
+}
+
+.SearchBar_box input::placeholder {
+  color: var(--icons-color);
+  font-size: 1rem;
+}
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .SearchBar {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .SearchBar_box {
+    width: 40%;
+  }
+}

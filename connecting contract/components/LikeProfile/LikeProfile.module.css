@@ -1,0 +1,11 @@
+.like {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.like_box {
+  border-radius: 50%;
+}
+.like_img {
+  border-radius: 50%;
+}

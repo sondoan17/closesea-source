@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_1_1634)" transform="matrix(1, 0, 0, 1, 0.181191, 0.181191)">
+    <path d="M44.8643 22.7284C44.8643 34.7225 35.1299 44.4568 23.1359 44.4568C11.1418 44.4568 1.40747 34.7225 1.40747 22.7284C1.40747 10.7343 11.1418 1 23.1359 1C35.1299 1 44.8643 10.7343 44.8643 22.7284Z" fill="url(#paint0_radial_1_1634)"/>
+    <rect x="21.04" y="12.597" width="5" height="23.219" transform="matrix(0.947614, -0.319419, 0.319419, 0.947614, -8.176116, 8.346788)" fill="white" rx="2.5" ry="2.5"/>
+    <rect x="12" y="15.644" width="5" height="14.834" rx="2.5" transform="matrix(0.947614, -0.319419, 0.319419, 0.947614, -8.415043, 11.356634)" fill="white"/>
+    <rect x="21.04" y="16.658" width="5" height="30.706" transform="matrix(0.947614, -0.319419, 0.319419, 0.947614, -0.724269, -3.299208)" fill="white" rx="2.5" ry="2.5" style=""/>
+  </g>
+  <defs>
+    <radialGradient id="paint0_radial_1_1634" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(15.5 1) rotate(71.3377) scale(79.69)">
+      <stop stop-color="#0284C7"/>
+      <stop offset="1" stop-color="#02F0FF"/>
+    </radialGradient>
+    <clipPath id="clip0_1_1634">
+      <rect width="139" height="46" fill="white" transform="translate(0.5)"/>
+    </clipPath>
+  </defs>
+  <text style="fill: rgb(18, 18, 65); font-family: 'Microsoft JhengHei UI'; font-size: 22.6353px; font-weight: 700; line-height: 30.6447px; white-space: pre;" transform="matrix(0.906829, 0, 0, 1.115039, 2.55979, -2.803015)" x="51.458" y="32.131">CloseSea</text>
+</svg>
