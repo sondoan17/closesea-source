@@ -19,7 +19,7 @@ import images from "../../../img";
 import Button from "../../Button/Button";
 import { FaSkating } from "react-icons/fa";
 
-const SideBar = ({ setOpenSideMenu }) => {
+const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   // use state
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false);
@@ -47,7 +47,7 @@ const SideBar = ({ setOpenSideMenu }) => {
       name: "Account Setting",
       link: "account-setting",
     },
-        {
+    {
       name: "Upload NFT",
       link: "upload-nft",
     },
@@ -158,8 +158,27 @@ const SideBar = ({ setOpenSideMenu }) => {
         </div>
       </div>
       <div className={Style.sideBar_button}>
-        <Button btnName="Create New NFT" handleClick={() => {}} />
-        <Button btnName="Connect Wallet" handleClick={() => {}} />
+        {currentAccount == "" ? (
+          <Button
+            btnName="Connect"
+            handleClick={() => connectWallet()}
+            classStyle={Style.sideBar_button_button}
+          />
+        ) : (
+          <a href="/upload-nft">
+            <Button
+              btnName="Create"
+              handleClick={() => {}}
+              classStyle={Style.sideBar_button_button}
+            />
+          </a>
+        )}
+
+        <Button
+          btnName="Connect Wallet"
+          handleClick={() => {}}
+          classStyle={Style.sideBar_button_button}
+        />
       </div>
     </div>
   );
