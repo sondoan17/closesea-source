@@ -158,6 +158,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
             value: listingPrice.toString(),
           });
       await transaction.wait();
+      console.log(transaction)
     } catch (error) {
       console.log("err while creating sale");
     }
