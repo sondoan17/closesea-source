@@ -63,6 +63,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       } else {
         console.log("no account found");
       }
+      console.log(currentAccount);
     } catch (error) {
       console.log("st wrong while connecting to wallet");
     }
