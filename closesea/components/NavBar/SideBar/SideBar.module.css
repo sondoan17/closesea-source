@@ -64,6 +64,9 @@
   flex-direction: column;
   gap: 2rem;
 }
+.sideBar_button_button {
+  width: 15rem;
+}
 @media screen and (min-width: 320px) and (max-width: 375px) {
   .sideBar {
     width: 95vw;
