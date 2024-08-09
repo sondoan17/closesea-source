@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,6 +19,9 @@ import {
 } from "./index.js";
 import { Button } from "../componentsindex";
 import Images from "../../img";
+//import from smart contract
+import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext.js";
+
 const NavBar = () => {
   //useState
   const [discover, setDiscover] = useState(false);
@@ -84,6 +87,10 @@ const NavBar = () => {
       setOpenSideMenu(false);
     }
   };
+
+  //smart contract section
+  const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -139,7 +146,13 @@ const NavBar = () => {
           </div>
           {/* create button section */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName="Create" handleClick={() => {}} />
+            {currentAccount == "" ? (
+              <Button btnName="Connect" handleClick={() => connectWallet()} />
+            ) : (
+              <Link href={{ pathname: "/" }}>
+                <Button btnName="Create" />
+              </Link>
+            )}
           </div>
           {/* user profile */}
           <div className={Style.navbar_container_right_profile_box}>
