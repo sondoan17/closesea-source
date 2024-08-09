@@ -11,18 +11,22 @@ const Dropzone = ({
   title,
   heading,
   subHeading,
-  itemName,
+  name,
   website,
   description,
   royalties,
   fileSize,
   category,
   properties,
-  image,
+  uploadToPinata,
+  setImage,
 }) => {
   const [fileURL, setFileURL] = useState(null);
   const onDrop = useCallback(async (acceptedFile) => {
-    setFileURL(acceptedFile[0]);
+    const url = await uploadToPinata(acceptedFile[0]);
+    setFileURL(url);
+    setImage(url);
+    console.log(url);
   });
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -41,7 +45,7 @@ const Dropzone = ({
           <p>{title}</p>
           <div className={Style.Dropzone_box_input_img}>
             <Image
-              src={image}
+              src={images.upload}
               alt="upload"
               width={100}
               height={100}
@@ -56,7 +60,7 @@ const Dropzone = ({
         <aside className={Style.Dropzone_box_aside}>
           <div className={Style.Dropzone_box_aside_box}>
             <Image
-              src={images.nft_image_1}
+              src={fileURL}
               alt="nft image"
               width={200}
               height={200}
@@ -66,7 +70,7 @@ const Dropzone = ({
               <div className={Style.Dropzone_box_aside_box_preview_one}>
                 <p>
                   <span>NFT Name:</span>
-                  {itemName || ""}
+                  {name || ""}
                 </p>
                 <p>
                   <span>Website:</span>
