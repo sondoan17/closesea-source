@@ -5,6 +5,7 @@ import { FaPercent } from "react-icons/fa";
 import { AiTwotonePropertySafety } from "react-icons/ai";
 import { TiTick } from "react-icons/ti";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 //internal import
 import Style from "./UploadNFTPage.module.css";
@@ -13,15 +14,19 @@ import formStyle from "../Account/Form/Form.module.css";
 import { Button } from "../../components/componentsindex";
 import { Dropzone } from "./UploadNFTindex.js";
 
-const UploadNFTPage = () => {
+const UploadNFTPage = ({ uploadToPinata, createNFT }) => {
+  const [price, setPrice] = useState("");
   const [active, setActive] = useState(0);
-  const [itemName, setItemName] = useState("");
+  const [name, setName] = useState("");
   const [website, setWebsite] = useState("");
   const [description, setDescription] = useState("");
   const [royalties, setRoyalties] = useState("");
   const [fileSize, setFileSize] = useState("");
   const [properties, setProperties] = useState("");
   const [category, setCategory] = useState(0);
+  const [image, setImage] = useState(null);
+
+  const router = useRouter();
 
   const categoryArray = [
     {
@@ -55,14 +60,15 @@ const UploadNFTPage = () => {
         title="JPG, PNG, WEBM, Max 100MB"
         heading="Drag & drop file"
         subHeading="or Browse from your device"
-        itemName={itemName}
+        name={name}
         website={website}
         description={description}
         royalties={royalties}
         fileSize={fileSize}
         category={category}
         properties={properties}
-        image={images.upload}
+        setImage={setImage}
+        uploadToPinata={uploadToPinata}
       />
 
       <div className={Style.upload_box}>
@@ -72,7 +78,7 @@ const UploadNFTPage = () => {
             type="text"
             placeholder="sondoan17"
             className={formStyle.Form_box_input_username}
-            onChange={(e) => setItemName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className={formStyle.Form_box_input}>
@@ -109,7 +115,6 @@ const UploadNFTPage = () => {
             underneath its image. Markdown syntax is supported.
           </p>
         </div>
-
         <div className={formStyle.Form_box_input}>
           <label htmlFor="name">Choose collection</label>
           <p className={Style.upload_box_input_para}>
@@ -184,11 +189,37 @@ const UploadNFTPage = () => {
               />
             </div>
           </div>
+          <div className={formStyle.Form_box_input}>
+            <label htmlFor="Price">Price</label>
+            <div className={formStyle.Form_box_input_box}>
+              <div className={formStyle.Form_box_input_box_icon}>
+                <AiTwotonePropertySafety />
+              </div>
+              <input
+                type="text"
+                placeholder="Price"
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
         <div className={Style.upload_box_btn}>
           <Button
             btnName="Upload"
-            handleClick={() => {}}
+            handleClick={async () =>
+              createNFT(
+                name,
+                price,
+                image,
+                description,
+                router,
+                // website,
+                // royalties,
+                // fileSize,
+                // category,
+                // properties
+              )
+            }
             classStyle={Style.upload_box_btn_style}
           />
           <Button
