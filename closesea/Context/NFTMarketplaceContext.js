@@ -159,7 +159,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
             value: listingPrice.toString(),
           });
       await transaction.wait();
-      router.push('/search')
+      router.push("/search");
       console.log(transaction);
     } catch (error) {
       console.log("err while creating sale");
@@ -201,6 +201,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
       console.log("err while fetching NFT");
     }
   };
+  useEffect(() => {
+    fetchNFTs();
+    
+  }, []);
 
   //---fetch my NFT
   const fetchMyNFTOrListedNFTs = async (type) => {
