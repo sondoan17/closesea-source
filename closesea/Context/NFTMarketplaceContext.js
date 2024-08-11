@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Web3Modal from "web3modal";
 const ethers = require("ethers");
-import Router from "next/router";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 // import { create as ipfsHttpClient } from "ipfs-http-client";
 import WalletConnectProvider from "@walletconnect/web3-provider";
@@ -49,6 +49,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   //usestate
   const [currentAccount, setCurrentAccount] = useState("");
+  const router = useRouter();
 
   //---check if wallet connected
   const checkIfWalletConnected = async () => {
@@ -158,7 +159,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
             value: listingPrice.toString(),
           });
       await transaction.wait();
-      console.log(transaction)
+      router.push('/search')
+      console.log(transaction);
     } catch (error) {
       console.log("err while creating sale");
     }
