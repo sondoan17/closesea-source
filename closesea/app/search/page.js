@@ -22,7 +22,7 @@ const Search = () => {
         setNftsCopy(item);
       })
       .catch((err) => {});
-  });
+  }, []);
 
   const onHandleSearch = (value) => {
     const filteredNFTs = nfts.filter(({ name }) =>
