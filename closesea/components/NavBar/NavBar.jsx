@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 //Icon Import
 import { MdNotifications } from "react-icons/md";
@@ -29,6 +30,8 @@ const NavBar = () => {
   const [profile, setProfile] = useState(false);
   const [notification, setNotification] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+
+  const router = useRouter();
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -96,15 +99,15 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <Link href="/">
-              <Image
-                src={Images.logo}
-                alt="NFT MARKETPLACE"
-                width={140}
-                height={100}
-                priority={true}
-              />
-            </Link>
+            <Image
+              src={Images.logo}
+              alt="NFT MARKETPLACE"
+              width={140}
+              height={100}
+              priority={true}
+              onClick={() => router.push("/")}
+              
+            />
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
@@ -149,9 +152,10 @@ const NavBar = () => {
             {currentAccount == "" ? (
               <Button btnName="Connect" handleClick={() => connectWallet()} />
             ) : (
-              <a href="/upload-nft">
-                <Button btnName="Create" handleClick={() => {}} />
-              </a>
+              <Button
+                btnName="Create"
+                handleClick={() => router.push("/upload-nft")}
+              />
             )}
           </div>
           {/* user profile */}
