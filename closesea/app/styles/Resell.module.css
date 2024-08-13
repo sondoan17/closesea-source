@@ -1,0 +1,42 @@
+.reSellToken {
+  width: 100%;
+  margin-block: 4rem;
+}
+
+.reSellToken_box {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.reSellToken h1 {
+  font-size: 3rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.reSellToken_box_image_img {
+  margin-block: 2rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.reSellToken_box_btn {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .reSellToken_box {
+    grid-template-columns: 1fr;
+  }
+  .reSellToken h1 {
+    font-size: 2rem;
+  }
+  .reSellToken_box_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
