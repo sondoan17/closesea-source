@@ -139,6 +139,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const url = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
       console.log(url);
       await createSale(url, price);
+      router.push("/search");
     } catch (error) {
       console.error(error);
     }
@@ -155,7 +156,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         ? await contract.createToken(url, price, {
             value: listingPrice.toString(),
           })
-        : await contract.reSellToken(url, price, {
+        : await contract.resellToken(id, price, {
             value: listingPrice.toString(),
           });
       await transaction.wait();
@@ -265,6 +266,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     <NFTMarketplaceContext.Provider
       value={{
         titleData,
+        createSale,
         checkIfWalletConnected,
         connectWallet,
         uploadToPinata,

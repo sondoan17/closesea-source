@@ -3,6 +3,9 @@
   z-index: 99999;
   width: 80%;
 }
+.logo {
+  cursor: pointer;
+}
 .navbar_container {
   width: 100%;
   margin: 0 auto;
