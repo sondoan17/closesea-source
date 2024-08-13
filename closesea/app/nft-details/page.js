@@ -19,6 +19,7 @@ const NFTDetailsPage = () => {
     price: "",
     seller: "",
     description: "",
+    tokenURI:''
   });
   const searchParams = useSearchParams();
   useEffect(() => {
@@ -30,6 +31,7 @@ const NFTDetailsPage = () => {
       price: searchParams.get("price"),
       seller: searchParams.get("seller"),
       description: searchParams.get("description"),
+      tokenURI: searchParams.get("tokenURI")
     });
   }, [searchParams]);
   return (
