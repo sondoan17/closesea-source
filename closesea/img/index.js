@@ -58,8 +58,10 @@ import founder1 from "./founder1.png";
 import founder2 from "./founder2.png";
 import founder3 from "./founder3.png";
 import founder4 from "./founder4.png";
+import loader from "./Loader.gif";
 
 export default {
+  loader,
   founder1,
   founder2,
   founder3,

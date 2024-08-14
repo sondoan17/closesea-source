@@ -3,7 +3,12 @@ import React, { useState, useEffect, useContext } from "react";
 
 //internal import
 import { SearchBar } from "../../AllPages/Search/searchindex";
-import { Slider, Brand, Filter } from "../../components/componentsindex";
+import {
+  Slider,
+  Brand,
+  Filter,
+  Loader,
+} from "../../components/componentsindex";
 import { NFTCardTwo, Banner } from "../../AllPages/Collection/collectionindex";
 import images from "../../img";
 
@@ -59,7 +64,8 @@ const Search = () => {
         onClearSearch={onClearSearch}
       />
       <Filter />
-      <NFTCardTwo NFTData={nfts} />
+      {nfts.length == 0 ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
+
       <Slider />
       <Brand />
     </>

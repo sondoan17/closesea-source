@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./styles/globals.css";
 import Style from "./page.module.css";
 
@@ -18,13 +18,31 @@ import {
   Slider,
   Brand,
   Video,
+  Loader,
 } from "../components/componentsindex";
+import { getTopCreator } from "../AllPages/TopCreator/TopCreator";
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const HomePage = () => {
   const { checkIfWalletConnected } = useContext(NFTMarketplaceContext);
   useEffect(() => {
     checkIfWalletConnected();
+  }, []);
+
+  const { fetchNFTs } = useContext(NFTMarketplaceContext);
+  const [nfts, setNfts] = useState([]);
+  const [nftsCopy, setNftsCopy] = useState([]);
+
+  //creator list
+  const creators = getTopCreator(nfts);
+
+  useEffect(() => {
+    fetchNFTs()
+      .then((item) => {
+        setNfts(item.reverse());
+        setNftsCopy(item);
+      })
+      .catch((err) => {});
   }, []);
 
   return (
@@ -38,7 +56,11 @@ const HomePage = () => {
           paragraph="Discover the most outstanding NFTs in all topics of lifes"
         />
         <AudioLive />
-        <FollowerTab />
+        {creators.length == 0 ? (
+          <Loader />
+        ) : (
+          <FollowerTab TopCreators={creators} />
+        )}
 
         <Slider />
         <Collection />
@@ -47,7 +69,7 @@ const HomePage = () => {
           paragraph="Discover the most outstanding NFTs in all topics of lifes"
         />
         <Filter />
-        <NFTCard />
+        {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
         <Title
           heading="Browse by category"
           paragraph="Explore the NFTs in the most featured categories."

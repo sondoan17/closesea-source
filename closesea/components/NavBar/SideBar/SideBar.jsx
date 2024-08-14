@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { GrClose } from "react-icons/gr";
 import {
   TiSocialFacebook,
@@ -86,6 +87,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   const closeSideBar = () => {
     setOpenSideMenu(false);
   };
+  const router = useRouter();
   return (
     <div className={Style.sideBar}>
       <GrClose
@@ -165,20 +167,12 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
             classStyle={Style.sideBar_button_button}
           />
         ) : (
-          <a href="/upload-nft">
-            <Button
-              btnName="Create"
-              handleClick={() => {}}
-              classStyle={Style.sideBar_button_button}
-            />
-          </a>
+          <Button
+            btnName="Create"
+            handleClick={() => router.push("/upload-nft")}
+            classStyle={Style.sideBar_button_button}
+          />
         )}
-
-        <Button
-          btnName="Connect Wallet"
-          handleClick={() => {}}
-          classStyle={Style.sideBar_button_button}
-        />
       </div>
     </div>
   );

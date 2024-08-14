@@ -1,10 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 
 //internal import
 import Style from "../styles/ConnectWallet.module.css";
 import images from "../../img";
+
+//import smart contract
+import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 
 const connectWallet = () => {
   const [activeBtn, setActiveBtn] = useState(1);
@@ -26,6 +29,7 @@ const connectWallet = () => {
       name: "Safepal",
     },
   ];
+  const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
   return (
     <div className={Style.connectWallet}>
       <div className={Style.connectWallet_box}>
@@ -40,7 +44,7 @@ const connectWallet = () => {
                 activeBtn == i + 1 ? Style.active : ""
               }`}
               key={i + 1}
-              onClick={() => setActiveBtn(i + 1)}
+              onClick={() => (setActiveBtn(i + 1), connectWallet())}
             >
               <Image
                 src={el.provider}

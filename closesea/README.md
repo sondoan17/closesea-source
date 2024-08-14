@@ -9,7 +9,7 @@ npx hardhat help
 npx hardhat test
 REPORT_GAS=true npx hardhat test
 npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+npx hardhat run script/deploy.js --network localhost
 ```
 
-https://youtu.be/S3jJtGYI18E?t=53734
+https://youtu.be/S3jJtGYI18E?t=64009

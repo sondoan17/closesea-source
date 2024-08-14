@@ -170,7 +170,7 @@ const NavBar = () => {
                 className={Style.navbar_container_right_profile}
               />
 
-              {profile && <Profile />}
+              {profile && <Profile  currentAccount={currentAccount}/>}
             </div>
           </div>
 
