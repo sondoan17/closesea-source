@@ -133,5 +133,7 @@
     "imageCover": "nft-9-cover.jpg",
     "images": ["nft-9-1.jpg", "nft-9-2.jpg", "nft-9-3.jpg"],
     "startDates": ["2021-12-16,10:00", "2022-01-16,10:00", "2022-12-12,10:00"]
-  }
+  },
+  { "id": 9, "name": "The Northern Lights", "duration": 3, "maxGroupSize": 12 },
+  { "id": 10, "name": "The Northern Lights", "duration": 3, "maxGroupSize": 12 }
 ]
