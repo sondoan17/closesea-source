@@ -26,7 +26,7 @@ const Dropzone = ({
     const url = await uploadToPinata(acceptedFile[0]);
     setFileURL(url);
     setImage(url);
-    console.log(url);
+    
   });
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,

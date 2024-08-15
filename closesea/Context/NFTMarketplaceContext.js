@@ -64,7 +64,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       } else {
         console.log("no account found");
       }
-      console.log(currentAccount);
+      // console.log(currentAccount);
     } catch (error) {
       console.log("st wrong while connecting to wallet");
     }
@@ -137,7 +137,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       });
 
       const url = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
-      console.log(url);
+      
       await createSale(url, price);
       router.push("/search");
     } catch (error) {
@@ -161,7 +161,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
           });
       await transaction.wait();
       router.push("/search");
-      console.log(transaction);
+      
     } catch (error) {
       console.log(error);
     }
