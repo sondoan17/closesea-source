@@ -8,6 +8,7 @@ import Link from "next/link";
 
 //internal import
 import Style from "./NFTCardTwo.module.css";
+import images from "../../../img";
 import { LikeProfile } from "../../../components/componentsindex";
 
 const NFTCardTwo = ({ NFTData }) => {
@@ -43,7 +44,7 @@ const NFTCardTwo = ({ NFTData }) => {
             </div>
             <div className={Style.NFTCardTwo_box_img}>
               <Image
-                src={el.image}
+                src={el.image || images.nft_image_1}
                 alt="nft img"
                 layout="responsive"
                 className={Style.NFTCardTwo_box_img_img}
@@ -54,14 +55,14 @@ const NFTCardTwo = ({ NFTData }) => {
             <div className={Style.NFTCardTwo_box_info}>
               <div className={Style.NFTCardTwo_box_info_left}>
                 <LikeProfile />
-                <p>{el.name}</p>
+                <p>{el.name || "Demo NFT"}</p>
               </div>
               <small>4{i + 2}</small>
             </div>
             <div className={Style.NFTCardTwo_box_price}>
               <div className={Style.NFTCardTwo_box_price_box}>
                 <small>Current Bid</small>
-                <p>{el.price} ETH</p>
+                <p>{el.price || "5"} ETH</p>
               </div>
               <p className={Style.NFTCardTwo_box_price_stock}>
                 <MdTimer /> <span>{i + 1} hours left</span>
