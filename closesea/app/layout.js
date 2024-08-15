@@ -11,11 +11,13 @@ const RootLayout = ({ children }) => {
     <html>
       <head>{/* <link rel="icon" href="/favicon.ico" /> */}</head>
       <body>
-        <NFTMarketplaceProvider>
-          <NavBar />
-          {children}
-          <Footer />
-        </NFTMarketplaceProvider>
+        <Suspense>
+          <NFTMarketplaceProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </NFTMarketplaceProvider>
+        </Suspense>
       </body>
     </html>
   );
