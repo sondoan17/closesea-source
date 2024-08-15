@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useContext, Suspense } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "next/navigation";
 
 //internal import
@@ -35,13 +35,11 @@ const NFTDetailsPage = () => {
     });
   }, [searchParams]);
   return (
-    <Suspense>
-      <div>
-        <NFTDetails nft={nft} />
-        <Category />
-        <Brand />
-      </div>
-    </Suspense>
+    <div>
+      <NFTDetails nft={nft} />
+      <Category />
+      <Brand />
+    </div>
   );
 };
 
