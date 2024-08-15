@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 //internal import
@@ -19,7 +19,7 @@ const NFTDetailsPage = () => {
     price: "",
     seller: "",
     description: "",
-    tokenURI:''
+    tokenURI: "",
   });
   const searchParams = useSearchParams();
   useEffect(() => {
@@ -31,15 +31,17 @@ const NFTDetailsPage = () => {
       price: searchParams.get("price"),
       seller: searchParams.get("seller"),
       description: searchParams.get("description"),
-      tokenURI: searchParams.get("tokenURI")
+      tokenURI: searchParams.get("tokenURI"),
     });
   }, [searchParams]);
   return (
-    <div>
-      <NFTDetails nft={nft} />
-      <Category />
-      <Brand />
-    </div>
+    <Suspense>
+      <div>
+        <NFTDetails nft={nft} />
+        <Category />
+        <Brand />
+      </div>
+    </Suspense>
   );
 };
 
