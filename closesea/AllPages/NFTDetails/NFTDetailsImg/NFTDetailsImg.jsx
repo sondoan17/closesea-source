@@ -78,7 +78,7 @@ const NFTDetailsImg = ({ nft }) => {
 
         {description && (
           <div className={Style.NFTDetailsImg_box_description_box}>
-            <p>{nft.description}</p>
+            <p>{nft.description || 'This is NFT'}</p>
           </div>
         )}
         <div
@@ -93,11 +93,11 @@ const NFTDetailsImg = ({ nft }) => {
             <small>2000 x 2000 px.IMAGE(685KB)</small>
             <p>
               <small>Contract Address</small> <br />
-              {nft.seller}
+              {nft.seller || '0x50f5474724e0ee42d9a4e711ccfb275809fd6d4a'}
             </p>
             <p>
               <small>Token ID</small> <br />
-              {nft.tokenId}
+              {nft.tokenId || '01'}
             </p>
           </div>
         )}

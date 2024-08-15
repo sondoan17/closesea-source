@@ -275,7 +275,7 @@ const NFTDescription = ({ nft }) => {
                   btnName={"List on Marketplace"}
                   handleClick={() =>
                     router.push(
-                      `/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
+                      `/nft-details/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
                     )
                   }
                   classStyle={Style.button}

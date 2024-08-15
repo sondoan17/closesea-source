@@ -4,28 +4,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   res.send("Hello");
-// });
+//---get method
 
-// app.get("/", (req, res) => {
-//     res.json({
-//         message: "hello",
-//         api: "583946589-3456"
-//     });
-//   });
-
-// app.post("/", (req, res) => {
-//   res.json({
-//     message: "your data",
-//   });
-// });
-
-//get request
 const nfts = JSON.parse(fs.readFileSync(`${__dirname}/data/nft-simple.json`));
-
-// console.log(nfts);
-
 app.get("/api/v1/nfts", (req, res) => {
   res.status(200).json({
     status: "success",
@@ -35,6 +16,8 @@ app.get("/api/v1/nfts", (req, res) => {
     },
   });
 });
+
+//---post method
 
 app.post("/api/v1/nfts", (req, res) => {
   const newId = nfts[nfts.length - 1].id + 1;
@@ -50,6 +33,44 @@ app.post("/api/v1/nfts", (req, res) => {
       });
     }
   );
+});
+
+//---get single nft
+
+app.get("/api/v1/nfts/:id", (req, res) => {
+  const id = req.params.id * 1;
+  const nft = nfts.find((el) => el.id === id);
+  if (id > nfts.length) {
+    res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  } else {
+    res.status(200).json({
+      status: "success",
+      data: {
+        nft,
+      },
+    });
+  }
+});
+
+//---patch method
+
+app.patch("/api/v1/nfts/:id", (req, res) => {
+  if (req.params.id * 1 > nfts.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "invalid id",
+    });
+  } else {
+    res.status(200).json({
+      status: "success",
+      data: {
+        nft: "updating nft",
+      },
+    });
+  }
 });
 
 const port = 3000;
