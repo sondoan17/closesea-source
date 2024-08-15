@@ -26,7 +26,7 @@ const Search = () => {
         setNfts(item.reverse());
         setNftsCopy(item);
       })
-      .catch((err) => {});
+      .catch((err) => console.log(err));
   }, []);
 
   const onHandleSearch = (value) => {

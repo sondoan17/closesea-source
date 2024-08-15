@@ -6,10 +6,13 @@ require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.24",
-  // networks: {
-  //   sepolia: {
-  //     url: `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
-  //     accounts: [SEPOLIA_PRIVATE_KEY]
-  //   }
-  // }
+  networks: {
+    hardhat: {},
+    polygon_amoy: {
+      url: "https://polygon-amoy.g.alchemy.com/v2/AmSZ2WUlMfz_eIXRFnaZSRSebcbefvuw",
+      accounts: [
+        `0x${"f0c7d72543a16d4662145b11651cedaa8d4244e47cf571c246a274c361dcd950"}`,
+      ],
+    },
+  },
 };

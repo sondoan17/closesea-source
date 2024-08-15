@@ -4,7 +4,6 @@ import Web3Modal from "web3modal";
 const ethers = require("ethers");
 import { useRouter } from "next/navigation";
 import axios from "axios";
-// import { create as ipfsHttpClient } from "ipfs-http-client";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
 //internal import
@@ -163,7 +162,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       router.push("/search");
       console.log(transaction);
     } catch (error) {
-      console.log("err while creating sale");
+      console.log(error);
     }
   };
 
@@ -199,7 +198,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       );
       return items;
     } catch (error) {
-      console.log("err while fetching NFT");
+      console.log(error);
     }
   };
   useEffect(() => {
