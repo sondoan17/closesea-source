@@ -33,6 +33,7 @@ async function connect() {
   try {
     const web3Modal = await getWeb3Modal();
     const connection = await web3Modal.connect();
+
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
@@ -169,9 +170,14 @@ export const NFTMarketplaceProvider = ({ children }) => {
   //---fetchNFT function
   const fetchNFTs = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider({
+        url: "https://polygon-amoy.g.alchemy.com/v2/AmSZ2WUlMfz_eIXRFnaZSRSebcbefvuw",
+      });
+
       const contract = fetchContract(provider);
+
       const data = await contract.fetchMarketItems();
+
       const items = await Promise.all(
         data.map(
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
@@ -198,7 +204,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       );
       return items;
     } catch (error) {
-      console.log(error);
+      console.log("err while fetching nft", error);
     }
   };
   useEffect(() => {
