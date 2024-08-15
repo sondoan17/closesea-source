@@ -47,9 +47,10 @@ const author = () => {
 
   useEffect(() => {
     fetchMyNFTOrListedNFTs("fetchMyNFTs").then((items) => {
-      setMyNFTs(items);
+      setMyNFTs(items||[]);
     });
   }, []);
+  
 
   return (
     <div className={Style.banner}>
