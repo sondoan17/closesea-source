@@ -12,4 +12,3 @@ npx hardhat node
 npx hardhat run script/deploy.js --network localhost
 ```
 
-https://youtu.be/S3jJtGYI18E?t=64009
