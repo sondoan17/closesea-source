@@ -1,2 +1,1 @@
 NFT MARKETPLACE NOTE
-https://youtu.be/S3jJtGYI18E?t=50905
