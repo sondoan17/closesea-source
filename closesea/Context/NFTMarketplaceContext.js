@@ -53,6 +53,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   //---check if wallet connected
   const checkIfWalletConnected = async () => {
+    
     try {
       if (!window.ethereum) return console.log("install metamask");
       const accounts = await window.ethereum.request({
