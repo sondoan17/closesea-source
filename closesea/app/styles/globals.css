@@ -56,12 +56,15 @@ a {
   background: var(--icons-color);
   width: 0.5rem;
 }
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: white;
-    background: black;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --icons-color: #ffffff;
+    --icons-light-color: #ffffff41;
+    --icons-bg-color: #2d2d2d;
+    --shadow-dark-color: #1f1f1f;
+    --bg-shadow-dark-color: #1f1f1f4b;
+    --shadow-light-color: #3d3d3d;
+    --main-bg-color: #000000;
   }
 }
